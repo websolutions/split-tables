@@ -1,0 +1,19 @@
+{
+  "name": "wsol-split-tables",
+  "version": "1.0.0",
+  "homepage": "https://github.com/websolutions/split-tables",
+  "authors": [
+    "Maxwell Barvian <max@barvian.me>"
+  ],
+  "description": "Responsive table jQuery plugin.",
+  "main": [
+    "css/wsol.splitTables.css",
+    "js/wsol.splitTables.js"
+  ],
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.2"
+  }
+}

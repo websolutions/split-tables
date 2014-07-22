@@ -1,0 +1,48 @@
+/* Split Tables
+   -------------------------------------------------- */
+
+table.split td, table.split th {
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+table.split th:first-child, table.split td:first-child,
+table.split.pinned td {
+	display: none;
+}
+
+/**
+ * Wrapper
+ */
+.table-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.table-wrapper .scrollable {
+	margin-left: 35%;
+	overflow: scroll;
+	overflow-y: hidden;
+}
+
+/**
+ * Pinned section
+ */
+.pinned {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #fff;
+	width: 35%;
+	overflow: hidden;
+	overflow-x: scroll;
+}
+
+	.pinned table {
+		width: 100%;
+	}
+
+	.pinned table th, .pinned table td {
+		white-space: nowrap;
+	}
