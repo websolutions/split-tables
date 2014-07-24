@@ -22,15 +22,15 @@
 
   SplitTables.prototype.init = function() {
     // Wrap original table in div wrapper
-    this.$original.wrap('<div class="' + this.settings.wrapperClass + '" />');
+    this.$wrapper = this.$original.wrap('<div class="' + this.settings.wrapperClass + '" />').parent();
 
     // Create copy of original table
     this.$copy = this.$original.clone();
     this.$copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-    this.$original.closest('.' + this.settings.wrapperClass).append(this.$copy);
-    this.$copy.wrap('<div class="' + this.settings.pinnedClass + '" />');
+    this.$wrapper.append(this.$copy);
+    this.$pinned = this.$copy.wrap('<div class="' + this.settings.pinnedClass + '" />').parent();
 
-    this.$original.wrap('<div class="' + this.settings.scrollableClass + '" />');
+    this.$scrollable = this.$original.wrap('<div class="' + this.settings.scrollableClass + '" />').parent();
 
     this.$original.addClass(this.settings.splitClass);
 
@@ -61,7 +61,7 @@
 
   SplitTables.prototype.destroy = function() {
     if (this.$original.hasClass(this.settings.splitClass)) {
-      this.$original.closest('.' + this.settings.wrapperClass).find('.' + this.settings.pinnedClass).remove();
+      this.$pinned.remove();
       this.$original.unwrap();
       this.$original.unwrap();
 
