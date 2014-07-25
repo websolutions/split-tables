@@ -39,7 +39,7 @@
 
   SplitTables.prototype.setCellHeights = function() {
     var tr = this.$original.find('tr'),
-        tr_copy = this.$copy.find('tr'),
+        trCopy = this.$copy.find('tr'),
         heights = [];
 
     tr.each(function (index) {
@@ -54,7 +54,7 @@
 
     });
 
-    tr_copy.each(function (index) {
+    trCopy.each(function (index) {
       $(this).height(heights[index]);
     });
   };
