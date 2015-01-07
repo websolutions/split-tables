@@ -21,12 +21,12 @@ The most basic example follows a normal table structure:
 
 And is initialized like so:
 ``` javascript
-$("table.responsive").splitTables();
+$("table.responsive").wsol_splitTables();
 ```
 
 Tables can be unsplit at any time:
 ``` javascript
-$("table.responsive").unsplitTables();
+$("table.responsive").data("wsol.splitTables").destroy();
 ```
 
 ### Configuring
